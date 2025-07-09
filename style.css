@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+  background: #f7f7fb;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+}
+#game-root {
+  width: 100vw;
+  height: 100vh;
+  max-width: 430px;
+  max-height: 920px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 24px rgba(0,0,0,0.08);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+@media (orientation: landscape) {
+  #game-root {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+.scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.button {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 16px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button:active {
+  background: #3466c2;
+}
+.timer-bar {
+  width: 80%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  margin: 16px auto;
+  overflow: hidden;
+  position: relative;
+}
+.timer-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #4f8cff, #00e0ff);
+  border-radius: 6px;
+  transition: width 0.1s linear;
+}
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0 0 0;
+}
+.keypad-btn {
+  background: #f0f4ff;
+  border: 1px solid #d0d8ff;
+  border-radius: 8px;
+  font-size: 2rem;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.keypad-btn:active {
+  background: #d0e2ff;
+}
+.input-box {
+  font-size: 2.2rem;
+  border: 2px solid #4f8cff;
+  border-radius: 8px;
+  padding: 8px 24px;
+  margin: 16px 0;
+  min-width: 120px;
+  text-align: center;
+  background: #f9fbff;
+}
+.coupon-canvas {
+  margin: 24px auto;
+  display: block;
+  background: #fffbe7;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #ffe082;
+}
+.celebrate {
+  animation: pop 0.7s;
+}
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.ggg-fly {
+  position: absolute;
+  left: -120px;
+  top: 40%;
+  width: 100px;
+  height: auto;
+  animation: flyRight 4s linear forwards;
+  z-index: 10;
+}
+@keyframes flyRight {
+  0% { left: -120px; opacity: 1; }
+  80% { left: 80vw; opacity: 1; }
+  100% { left: 100vw; opacity: 0; }
+}
+.celebration {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  pointer-events: none;
+  animation: pop 1s;
+} 
